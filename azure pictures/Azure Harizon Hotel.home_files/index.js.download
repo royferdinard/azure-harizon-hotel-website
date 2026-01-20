@@ -1,0 +1,35 @@
+function displaymenu() {
+  document.getElementsByClassName('azure-links')[0].classList.toggle("show");
+}
+
+document.getElementById("bars").addEventListener("click", displaymenu);
+
+
+const images = [
+  "azure pictures/hotel1.jpg",
+  "azure pictures/hotel2.webp",
+  "azure pictures/hotel3.webp",
+  "azure pictures/hotel4.avif",
+  "azure pictures/hotel4.jpg",
+  "azure pictures/hotel5.jpg",
+  "azure pictures/hotel6.jpg"
+];
+
+let index = 0;
+const hero = document.querySelector(".hero-section");
+
+setInterval(() => {
+  hero.style.backgroundImage = `url(${images[index]})`;
+  index = (index + 1) % images.length;
+}, 5000);
+
+
+
+let indexing =  0;
+const slider = document.getElementsByClassName("sliders");
+images = slider.children.length;
+
+setInterval(() => {
+  indexing = (indexing + 1) % images;
+  slider.style.transform = `translateX(-${indexing * 300}px)`;
+}, 2000);
